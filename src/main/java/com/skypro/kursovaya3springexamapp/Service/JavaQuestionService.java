@@ -24,8 +24,8 @@ public class JavaQuestionService implements QuestionService {
     }
 
     @Override
-    public Question remove(String question, String answer) {
-        return questions.remove(question);
+    public Question remove(int id, String question) {
+        return questions.remove(id);
     }
 
     @Override

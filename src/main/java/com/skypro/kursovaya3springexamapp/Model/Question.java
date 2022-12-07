@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Question {
     int id;
-    int counter;
+    static int counter = 1;
     String question;
     String answer;
 

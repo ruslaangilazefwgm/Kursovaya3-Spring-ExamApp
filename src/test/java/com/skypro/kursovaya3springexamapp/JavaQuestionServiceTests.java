@@ -32,7 +32,7 @@ public class JavaQuestionServiceTests {
     public void removeQuestion() {
         Question result = javaQuestionService.add(new Question("q1", "a1"));
         Question result2 = javaQuestionService.add(new Question("q2", "a2"));
-        javaQuestionService.remove("q1", "a1");
+        javaQuestionService.remove(0, "a1");
         boolean b = javaQuestionService.getAll().contains(result);
         Assertions.assertThat(!b);
     }

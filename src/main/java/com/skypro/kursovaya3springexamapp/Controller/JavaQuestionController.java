@@ -22,10 +22,12 @@ public class JavaQuestionController {
     }
 
     @DeleteMapping("/remove")  /////?question=QuestionText&answer=QuestionAnswer
-    public Question removeQuestion(@RequestParam("question") String question,
-                                   @RequestParam("answer") String answer) {
-        return this.javaQuestionService.remove(question, answer);
+    public Question removeQuestion(@RequestParam("id") int id,
+                                    @RequestParam("question") String question
+    ) {
+        return this.javaQuestionService.remove(id, question);
     }
+
     @GetMapping("/java")
     public Collection<Question> getAllQuestion() {
         return this.javaQuestionService.getAll();
