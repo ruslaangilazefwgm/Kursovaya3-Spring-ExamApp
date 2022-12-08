@@ -9,7 +9,6 @@ import java.util.*;
 public class JavaQuestionService implements QuestionService {
     private final Map<Integer, Question> questions = new HashMap<>();
 
-
     @Override
     public Question add(String question, String answer) {
         Question question1 = new Question(question, answer);
@@ -24,7 +23,7 @@ public class JavaQuestionService implements QuestionService {
     }
 
     @Override
-    public Question remove(int id, String question) {
+    public Question remove(int id) {
         return questions.remove(id);
     }
 

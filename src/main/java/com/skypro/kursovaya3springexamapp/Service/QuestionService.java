@@ -9,7 +9,7 @@ public interface QuestionService {
 
     Question add(Question question);
 
-    Question remove(int id, String question);
+    Question remove(int id);
 
     Collection<Question> getAll();
 

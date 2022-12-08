@@ -3,6 +3,7 @@ package com.skypro.kursovaya3springexamapp;
 import com.skypro.kursovaya3springexamapp.Model.Question;
 import com.skypro.kursovaya3springexamapp.Service.ExaminerServiceImpl;
 import com.skypro.kursovaya3springexamapp.Service.JavaQuestionService;
+import com.skypro.kursovaya3springexamapp.Service.toolargeAmountException;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -25,12 +26,23 @@ public class ExaminerServiceImplTests {
 
     @Test
     void getAllQuestionsTest() {
-
         Collection<Question> questions = Set.of(
                 new Question("q1", "a1"),
                 new Question("q2", "a2"),
                 new Question("q3", "a3")
         );
         Assertions.assertThat(questions.size() == examinerService.getQuestions(3).size());
+    }
+
+    @Test
+    void throwOrNotTooLargeAmountException() {
+        Collection<Question> questions = Set.of(
+                new Question("q1", "a1"),
+                new Question("q2", "a2"),
+                new Question("q3", "a3")
+        );
+        Assertions.assertThatThrownBy(() ->
+                        examinerService.getQuestions(10))
+                .isInstanceOf(toolargeAmountException.class);
     }
 }

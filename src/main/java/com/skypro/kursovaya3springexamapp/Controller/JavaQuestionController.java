@@ -21,11 +21,9 @@ public class JavaQuestionController {
         return this.javaQuestionService.add(question, answer);
     }
 
-    @DeleteMapping("/remove")  /////?question=QuestionText&answer=QuestionAnswer
-    public Question removeQuestion(@RequestParam("id") int id,
-                                    @RequestParam("question") String question
-    ) {
-        return this.javaQuestionService.remove(id, question);
+    @DeleteMapping("/remove")  /////?id=0
+    public Question removeQuestion(@RequestParam("id") int id) {
+        return this.javaQuestionService.remove(id);
     }
 
     @GetMapping("/java")
